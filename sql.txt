@@ -1,0 +1,138 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Хост: 127.0.0.1
+-- Время создания: Мар 24 2022 г., 10:02
+-- Версия сервера: 10.4.6-MariaDB
+-- Версия PHP: 7.3.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- База данных: `test3`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `items`
+--
+
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL,
+  `parent_id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `items`
+--
+
+INSERT INTO `items` (`id`, `parent_id`, `name`, `description`) VALUES
+(1, 0, 'name 1', 'description 1'),
+(8, 9, 'name 8', 'description 8'),
+(9, 0, 'name 9', 'description 9'),
+(10, 1, 'name 10', 'description 10'),
+(11, 8, 'name 11', 'description 11'),
+(16, 9, 'name 16', 'description 16'),
+(22, 11, 'name 22', 'description 22'),
+(25, 16, 'name 25', 'description 25'),
+(27, 9, 'name 27', 'description 27'),
+(31, 25, 'name 31', 'description 31'),
+(33, 1, 'name 33', 'description 33'),
+(38, 33, 'name 38', 'description 38'),
+(40, 38, 'name 40', 'description 40'),
+(41, 0, 'name 41', 'description 41'),
+(43, 32, 'name 43', 'description 43'),
+(44, 8, 'name 44', 'description 44'),
+(45, 9, 'name 45', 'description 45'),
+(46, 20, 'name 46', 'description 46'),
+(48, 44, 'name 48', 'description 48'),
+(49, 30, 'name 49', 'description 49'),
+(53, 41, 'name 53', 'description 53'),
+(54, 8, 'name 54', 'description 54'),
+(55, 0, 'name 55', 'description 55'),
+(56, 38, 'name 56', 'description 56'),
+(57, 55, 'name 57', 'description 57'),
+(58, 16, 'name 58', 'description 58'),
+(63, 27, 'name 63', 'description 63'),
+(68, 50, 'name 68', 'description 68'),
+(73, 31, 'name 73', 'description 73'),
+(74, 40, 'name 74', 'description 74'),
+(85, 45, 'name 85', 'description 85'),
+(88, 65, 'name 88', 'description 88'),
+(89, 9, 'name 89', 'description 89'),
+(100, 10, 'ffffffff44', 'gggggggg4'),
+(101, 0, 'wwwwwww', 'wwwww'),
+(102, 9, 'fffffff', 'gggggggg');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `login` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `fio` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `login`, `password`, `fio`) VALUES
+(1, '11@mail.ru', '11', '6512bd43d9caa6e02c990b0a82652dca', 'name_11'),
+(2, '22@mail.ru', '22', 'b6d767d2f8ed5d21a44b0e5886680cb9', 'name_22'),
+(3, '33@mail.ru', '33', '182be0c5cdcd5072bb1864cdee4d3d6e', 'name_33'),
+(4, '44@mail.ru', '44', 'f7177163c833dff4b38fc8d2872f1ec6', 'name_44'),
+(5, '55@mail.ru', '55', 'b53b3a3d6ab90ce0268229151c9bde11', 'name_55'),
+(6, '66@mail.ru', '66', '3295c76acbf4caaed33c36b1b5fc2cb1', 'name_66'),
+(7, '77@mail.ru', '77', '28dd2c7955ce926456240b2ff0100bde', 'name_77'),
+(8, '88@mail.ru', '88', '2a38a4a9316c49e5a833517c45d31070', 'name_88'),
+(9, '99@mail.ru', '99', 'ac627ab1ccbdb62ec96e702f07f6425b', 'name_99');
+
+
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `items`
+--
+ALTER TABLE `items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
