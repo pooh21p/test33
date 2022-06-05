@@ -1,20 +1,20 @@
-ul.ul_tree{
-	
-	
+ul . ul_tree{
+    
+    
 }
 
-ul.ul_tree li{
-	display:none;
+ul . ul_tree li{
+    display:none;
 }
-ul.ul_tree .open{
-	display:block;
+ul . ul_tree . open{
+    display:block;
 }
 
-ul.ul_tree li span{
-	cursor:pointer;
+ul . ul_tree li span{
+    cursor:pointer;
 }
 
 #description{
 width: 430px; border: brown solid 4px; position: fixed; top: 40px; right: 20px; padding: 6px 6px 6px 6px; 
-background: #ddd; z-index: 9; font-size: 12px;
+background: #ddd; z - index: 9; font - size: 12px;
 }
